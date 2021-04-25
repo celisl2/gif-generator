@@ -13,12 +13,6 @@ function parseContent(data, size) {
 		var x = Math.floor((Math.random() * 24));
 		image[i] = '<img src="' + data.data[x].images.downsized_medium.url + '"/>';
 		content +=  image[i] + closeDiv;
-
-		/*
-		image[i] = '<a href="' + data.data[x].url + '"/>' + data.data[x].title  + "</a>";
-		content +=  "<p>" + image[i] + "<p/>" + closeDiv;
-		'<iframe src="https://giphy.com/embed/6yxIP39EMwP7IlIA28" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/nba-player-court-det-wayne-ellington-6yxIP39EMwP7IlIA28">via GIPHY</a></p>'
-		*/
 	}
 	document.getElementById("content").innerHTML = content;
 }
@@ -32,17 +26,6 @@ function getGif(gifNum)
 		console.log("success got data", data);
 		parseContent(data, gifNum);
 	});
-
-/*
-	fetch("//api.giphy.com/v1/gifs/trending?api_key=6QpBaZxQUBqszPZjK5Mh4uiOze6ahofm")
-	.then(function(response) { return response.json()})
-	.then(function(data) {
-		parseContent(data, gifNum);
-	})
-	.catch(function() {
-					alert("couldnt get gifs");
-	});
-*/
 
 }
 
